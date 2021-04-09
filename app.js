@@ -17,8 +17,13 @@ const globalRouter = require('./routes');
 
 const app = express();
 
+let connectionString = `${config.mongodb.connStr}/${config.mongodb.database}`;
+
+if(process.env.MONGODB_URI)
+  connectionString = process.env.MONGODB_URI;
+
 mongoose.connect(
-  `${config.mongodb.connStr}/${config.mongodb.database}`,
+  connectionString,
   {
     // Les paramètres ici évident des DeprecationWarnings, c.f. : https://mongoosejs.com/docs/deprecations.html
     useNewUrlParser: true,
