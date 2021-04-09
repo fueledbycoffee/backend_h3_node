@@ -6,5 +6,9 @@
   "mongodb": {
     "connStr": "mongodb://localhost:27017",
     "database": "student-manager-h3"
+  },
+  "jwt": {
+    "secret" : "DearPrincessCelestiaYourFaithfulStudentTwilightSparkle",
+    "expiry" : "24h"
   }
 }

@@ -5,7 +5,12 @@ const mongoose = require('mongoose'),
 const StudentSchema = new Schema({
   firstName: String,
   lastName: String,
-  email: { type: String, required: true, unique: true },
+  email: { type: String, require: true, unique: true },
+  comments : [{
+    title: String,
+    content: String,
+    Author: String
+  }],
   dateOfBirth: Date,
 }, { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }});
 
